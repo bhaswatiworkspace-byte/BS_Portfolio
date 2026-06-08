@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: #D9D9D9; color: #000; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+/* ── Reveal animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1),
+              transform 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1),
+              transform 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+
+.line-clip { overflow: hidden; }
+.line-clip > span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(0.16,1,0.3,1);
+}
+.line-clip.is-visible > span { transform: translateY(0); }
+
+/* Stagger delays */
+.delay-100 { transition-delay: 0.10s !important; }
+.delay-200 { transition-delay: 0.20s !important; }
+.delay-300 { transition-delay: 0.30s !important; }
+.delay-400 { transition-delay: 0.40s !important; }
+.delay-500 { transition-delay: 0.50s !important; }
+.delay-600 { transition-delay: 0.60s !important; }
+
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── 3D tilt card ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+/* ── Admin typography ── */
+.admin-input {
+  @apply w-full bg-white/[0.05] border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors;
+}
+.admin-btn {
+  @apply px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200;
+}
