@@ -23,7 +23,7 @@ export default {
         primary: '#ffffff',
         secondary: 'rgba(255,255,255,0.5)',
         muted: 'rgba(255,255,255,0.25)',
-        accent: '#D9D9D9',
+        accent: '#4FC3F7',
       },
       letterSpacing: {
         tightest: '-0.05em',

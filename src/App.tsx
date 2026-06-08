@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Work from './components/Work';
 import Skills from './components/Skills';
+import Press from './components/Press';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminPage from './admin/AdminPage';
@@ -25,7 +26,6 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
   const handleLoaderDone = useCallback(() => setLoaded(true), []);
 
-  // Admin route
   if (hash === '#/admin' || hash === '#admin') {
     return <AdminPage />;
   }
@@ -41,6 +41,7 @@ export default function App() {
           <About />
           <Work />
           <Skills />
+          <Press />
           <Contact />
         </main>
         <Footer />

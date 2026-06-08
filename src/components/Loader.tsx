@@ -21,11 +21,11 @@ export default function Loader({ onDone }: { onDone: () => void }) {
     <div className={`fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center transition-opacity duration-700 ${hiding ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <p className="font-clash font-bold text-[18vw] leading-none text-white select-none" style={{ letterSpacing: '-0.05em' }}>
         {String(progress).padStart(2, '0')}
-        <span className="text-accent">%</span>
+        <span style={{ color: '#4FC3F7' }}>%</span>
       </p>
       <div className="absolute bottom-10 left-10 font-inter text-xs text-white/30 tracking-[0.2em] uppercase">Loading</div>
       <div className="absolute bottom-10 right-10 font-inter text-xs text-white/30 tracking-[0.2em] uppercase">Bhaswati Sengupta</div>
-      <div className="absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-75" style={{ width: `${progress}%` }} />
+      <div className="absolute bottom-0 left-0 h-[1px] transition-all duration-75" style={{ width: `${progress}%`, background: '#4FC3F7' }} />
     </div>
   );
 }
